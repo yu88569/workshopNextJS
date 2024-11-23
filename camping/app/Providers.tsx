@@ -1,16 +1,17 @@
 import { ThemeProvider } from "./theme-provider"
-
-const Providers = ({children}:{children:React.ReactNode}) => {
+import { Toaster } from "@/components/ui/toaster"
+const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-    <ThemeProvider
+      <ThemeProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
-    >
+      >
         {children}
-    </ThemeProvider>
+        <Toaster />
+      </ThemeProvider>
     </>
   )
 }
