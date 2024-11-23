@@ -1,5 +1,6 @@
 import { Search } from "lucide-react"
 import Logo from "./Logo"
+import { Darkmode } from "./Darkmode"
 
 const Navbar = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar = () => {
             <Logo/>
             <Search/>
             <div className="flex gap-4">
-                <h1>Darkmode</h1>
+                <Darkmode/>
                 <h1>Profile</h1>
             </div>
         </div>
