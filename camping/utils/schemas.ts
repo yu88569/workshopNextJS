@@ -10,10 +10,18 @@ export const profileSchema = z.object({
 
 // const tam :string = 'tam'
 
-export const validateWithZod = <T>(
-    schema: ZodSchema<T>, 
-    data: unknown):T => {
+const validatedImage = () => {
+  const maxFileSize = 1024 * 1024;
+  return z.instanceof(File).refine((file) => {
+    return file.size <= maxFileSize;
+  }, "File size must be less then 1MB");
+};
 
+export const imageSchema = z.object({
+  image: validatedImage(),
+});
+
+export const validateWithZod = <T>(schema: ZodSchema<T>, data: unknown): T => {
   const result = schema.safeParse(data);
   if (!result.success) {
     // code
