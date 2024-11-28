@@ -3,8 +3,8 @@ import { useFormStatus } from "react-dom";
 import { Button } from "../ui/button";
 import { RotateCw } from "lucide-react";
 
-type btnSize = "defaulf" | "lg" | "sm";
-
+type btnSize = "default" | "lg" | "sm";
+// const roitai:string = 'tam'
 type SubmitButtonProps = {
   className?: string;
   size?: btnSize;
@@ -12,6 +12,7 @@ type SubmitButtonProps = {
 };
 
 export const SubmitButton = ({ className, size, text }: SubmitButtonProps) => {
+  // code
   const { pending } = useFormStatus();
   return (
     <Button
@@ -20,14 +21,12 @@ export const SubmitButton = ({ className, size, text }: SubmitButtonProps) => {
       size={size}
       className={`${className} capitalize`}
     >
-      {pending ? (
-        <>
+      {pending
+        ? <>
           <RotateCw className="animate-spin" />
-          <span>Please wait....</span>
+          <span>Please wait...</span>
         </>
-      ) : (
-        <p>{text}</p>
-      )}
+        : <p>{text}</p>}
     </Button>
   );
 };
