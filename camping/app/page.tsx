@@ -1,13 +1,14 @@
-import { Button } from "@/components/ui/button"
+// rafce
+import LandmarkContainer from "@/components/home/LandmarkContainer";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
+  // Search
+
   return (
     <>
-    <div>page</div>
-    <h1>sss</h1>
-    <Button variant="outline">Button</Button>
+      <LandmarkContainer />
     </>
-    
-  )
-}
-export default page
+  );
+};
+export default page;
