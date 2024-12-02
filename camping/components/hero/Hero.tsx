@@ -37,9 +37,9 @@ const Hero = ({ landmarks }: { landmarks: LandmarkCardProps }) => {
                 <div className="absolute bottom-0 left-0 z-50">
                   <div
                     className="col-span-4 mb-4 flex h-full flex-1 
-                  justify-end"
+                  justify-end px-5 md:mb-4 md:justify-end md:px-10"
                   >
-                    <OtherInfo />
+                    <OtherInfo landmark={landmark} />
                   </div>
                 </div>
               </div>
